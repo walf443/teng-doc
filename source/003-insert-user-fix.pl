@@ -3,7 +3,8 @@ use warnings;
 use utf8;
 use DBI;
 
-my $teng = do('source/create-teng-instance.pl');
+my $teng = do('source/create-teng-instance.pl')
+    or die $@;
 
 my $row = $teng->insert(user => {
     id => 1,
