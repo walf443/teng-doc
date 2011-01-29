@@ -3,13 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-TengによるRDBMSを扱う開発
+実践Teng
 ====================================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2 
+   :maxdepth: 2
+
    about
    feature
    quickstart
