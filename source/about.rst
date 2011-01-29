@@ -24,3 +24,8 @@
 * SQL::Makerについて
 * DBIx::TransactionManagerについて
 
+表記について
+-------------
+
+あるパッケージのインスタンスメソッドは、Package::Name#instance_methodというように記述します。また、あるパッケージのクラスメソッドはPackage::Name.class_methodというように記述します。
+
