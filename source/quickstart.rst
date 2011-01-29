@@ -42,15 +42,15 @@ nameというカラムとageというカラムを持つuserテーブルを作り
 
 以下のようなプログラムを作ります。
 
-.. literalinclude:: ./001-create-table.pl
+.. literalinclude:: ./quickstart/create-table.pl
 
 Teng::Schema::Loaderは、dbhから現在のテーブル情報を動的に取得して、Teng用のSchemaを構築してくれるモジュールです。
 
 Teng#doはDBI#doを実行し、エラーが起きた際には、エラーをフォーマットしつつdieしてくれます。SQLの結果を取得せずに任意のSQLを実行したい場合に便利です。
 
-001-create-table.plという名前で保存し、実行してみましょう。 ::
+create-table.plという名前で保存し、実行してみましょう。 ::
 
-    $ perl 001-create-table.pl
+    $ perl create-table.pl
 
 テーブルが実際にできたか確認してみましょう。 ::
 
@@ -92,15 +92,15 @@ userテーブルができていますね。
 
 適当なデータを挿入してみましょう。
 
-.. literalinclude:: ./002-insert-user.pl
+.. literalinclude:: ./quickstart/insert-user.pl
 
 ところで、このコードはTengクラスのインスタンスを作るところまでは、前回のコードと同様で冗長ですね。ここまでのコードはこれからも何度か出てきますし、説明上も見辛いので、インスタンスを作る部分までの部分は別ファイルへ外出ししてしまいましょう。
 
-.. literalinclude:: ./create-teng-instance.pl
+.. literalinclude:: ./quickstart/create-teng-instance.pl
 
 これを、source/以下にcreate-teng-instance.plとして保存し、先ほどのコードを下記のように変更します。
 
-.. literalinclude:: ./003-insert-user-fix.pl
+.. literalinclude:: ./quickstart/insert-user-fix.pl
 
 Tengのインスタンスを作るところまでは、今後はこのように記述します。
 
@@ -124,7 +124,7 @@ Tengでメソッドを実行した際に、どのようなSQLが実行された�
 
 そういうときは色々手段はありますが、現時点ではDBIx::QueryLogを使うのがお手軽かと思います。 ::
 
-    perl -MDBIx::QueryLog ./003-insert-user-fix.pl
+    perl -MDBIx::QueryLog ./insert-user-fix.pl
 
 実行してみると、思ったよりたくさんのクエリが実行されているのにびっくりされたかもしれません。
 
@@ -139,7 +139,7 @@ Schemaを明示的に定義してやることでこれらのクエリは走ら�
 
 せっかくなので先程の確認の操作をTengからもやってみましょう。
 
-.. literalinclude:: ./004-search-user.pl
+.. literalinclude:: ./quickstart/search-user.pl
 
 $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び出すたびに、Rowオブジェクトを生成してくれます。
 
@@ -148,6 +148,4 @@ $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び
 
 データの変更
 ------------
-
-
 
