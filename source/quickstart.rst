@@ -154,6 +154,10 @@ $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び
 
 .. literalinclude:: ./quickstart/search-user.pl
 
+一件のみ取得する際にはTeng#singleを使うと直接Rowオブジェクトを取得できます。
+
+.. literalinclude:: ./quickstart/single-user.pl
+
 データの削除
 ------------
 
