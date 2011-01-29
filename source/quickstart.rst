@@ -157,6 +157,25 @@ $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び
 データの削除
 ------------
 
+データを削除する際にはTeng#delete、あるいは、Teng::Row#deleteが使えます。
+
+.. literalinclude:: ./quickstart/delete-user.pl
+
+戻り値は、削除された件数です。Teng#deleteは複数件を一気に消すときに便利でしょう。
+
+.. literalinclude:: ./quickstart/delete-user-row.pl
+
+Rowオブジェクトのdeleteに何かしらのhookを入れているとき(キャッシュの削除等)に使います。
+各レコードの削除ごとに1回SQL発行されるので、ケースによってはやや注意して使う必要があるかもしれません。
+
 データの変更
 ------------
+
+データのupdateもdeleteとほぼ同じです。
+
+.. literalinclude:: ./quickstart/update-user-row.pl
+
+Rowオブジェクトからupdateした場合、条件が単純であれば元のRowオブジェクトのデータもupdateされていますが、DBに保存されている値と一致していることは保証されないので、取得しなおすのが無難です。
+
+条件にはHashRefだけでなく、ScalarRefを指定することもでき、これらは式や条件を指定する際に便利です。
 
