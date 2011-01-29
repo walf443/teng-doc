@@ -83,7 +83,7 @@ userテーブルができていますね。
     BIND    : $VAR1 = '';
     
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-     at source/001-create-table.pl line 23
+     at 001-create-table.pl line 23
 
 これは、既にquickstart.sqliteにuserテーブルが存在しているのに作ろうとしたため、です。
 
@@ -98,7 +98,7 @@ userテーブルができていますね。
 
 .. literalinclude:: ./quickstart/create-teng-instance.pl
 
-これを、source/以下にcreate-teng-instance.plとして保存し、先ほどのコードを下記のように変更します。
+これを、create-teng-instance.plとして保存し、先ほどのコードを下記のように変更します。
 
 .. literalinclude:: ./quickstart/insert-user-fix.pl
 
