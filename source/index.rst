@@ -9,9 +9,9 @@ TengによるRDBMSを扱う開発
 Contents:
 
 .. toctree::
-   :maxdepth: 2
-
+   :maxdepth: 2 
    about
+   feature
    quickstart
 
 Indices and tables
