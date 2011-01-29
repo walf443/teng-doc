@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use utf8;
 use DBI;
 
 my $teng = do('source/create-teng-instance.pl');
