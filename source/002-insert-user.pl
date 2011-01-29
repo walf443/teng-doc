@@ -31,3 +31,11 @@ my $row = $teng->insert(user => {
 
 warn Dumper($row->get_columns);
 
+my $last_insert_id = $teng->fast_insert(user => {
+    id => 2,
+    name => 'walf444',
+    age  => 30,
+});
+
+warn $last_insert_id;
+

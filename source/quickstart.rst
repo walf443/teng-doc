@@ -113,6 +113,7 @@ Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコ
     $ sqlite3
     sqlite> SELECT * FROM user;
     1|walf443|26
+    2|walf444|30
 
 ちゃんとデータが入っていますね。
 
