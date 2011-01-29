@@ -27,5 +27,5 @@ my $row = $teng->insert(user => {
     age  => 26,
 });
 
-warn Dumper($row);
+warn Dumper($row->get_columns);
 

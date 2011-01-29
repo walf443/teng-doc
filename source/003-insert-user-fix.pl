@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use DBI;
 
-my $teng = do('source/create-teng-instanse.pl');
+my $teng = do('source/create-teng-instance.pl');
 
 my $row = $teng->insert(user => {
     id => 1,
@@ -10,5 +10,5 @@ my $row = $teng->insert(user => {
     age  => 26,
 });
 
-warn Dumper($row);
+warn Dumper($row->get_columns);
 
