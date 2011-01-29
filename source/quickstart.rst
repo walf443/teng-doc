@@ -121,6 +121,8 @@ Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコ
 
 せっかくなので先程の確認の操作をTengからもやってみましょう。
 
+.. literalinclude:: ./004-search-user.pl
+
 データの削除
 ------------
 
