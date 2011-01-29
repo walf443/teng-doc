@@ -139,9 +139,20 @@ Schemaを明示的に定義してやることでこれらのクエリは走ら�
 
 せっかくなので先程の確認の操作をTengからもやってみましょう。
 
-.. literalinclude:: ./quickstart/search-user.pl
+.. literalinclude:: ./quickstart/search_named-user.pl
+
+Teng#search_named($sql, $hashref, $table_name)は、$sqlをSQLとして実行し、Teng::Iteratorオブジェクトを返します。
+
+SQL内で、:keywordのように記述してあり、$hashrefのキーとして"keyword"が存在していた場合には、:keywordをプレイスホルダに置きかえ、$hashref->{keyword}の値をbindします。
+$hashrefの値がArrayRefの場合には、(?,?,?)のように置きかえてくれるため、INの記述が楽です。
+
+$table_nameはTeng::IteratorがRowオブジェクトを生成する際のクラス名を決定するために必要です。
 
 $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び出すたびに、Rowオブジェクトを生成してくれます。
+
+また、簡単な条件での検索であればTeng#searchメソッドを使うと生でSQLを記述しなくてもよいです。
+
+.. literalinclude:: ./quickstart/search-user.pl
 
 データの削除
 ------------
