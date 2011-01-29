@@ -104,9 +104,9 @@ userテーブルができていますね。
 
 Tengのインスタンスを作るところまでは、今後はこのように記述します。
 
-Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコードして追加してくれます。戻り値はTeng::Rowクラスを継承したクラスのインスタンスです。
+Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコードして追加してくれます。戻り値はTeng::Rowクラスを継承したクラスのインスタンスです。(これを今後はRowオブジェクトと呼びます)
 
-戻り値を取得するために、SELECT文を一回発行しますが、発行してほしくない際にはTeng#fast_insertが使えます。
+戻り値でRowオブジェクトを返していますが、戻り値でRowオブジェクトを必要としない場合には、Teng#fast_insertが使えます。
 
 実際にデータが挿入されたのか確認してみましょう。 ::
 
@@ -116,6 +116,21 @@ Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコ
 
 ちゃんとデータが入っていますね。
 
+クエリの確認
+------------
+
+Tengでメソッドを実行した際に、どのようなSQLが実行されたのか知りたい、ということはあると思います。
+
+そういうときは色々手段はありますが、現時点ではDBIx::QueryLogを使うのがお手軽かと思います。 ::
+
+    perl -MDBIx::QueryLog ./003-insert-user-fix.pl
+
+実行してみると、思ったよりたくさんのクエリが実行されているのにびっくりされたかもしれません。
+
+これは、ほとんどはTeng::Schema::Loaderにより実行されているクエリです。
+
+Schemaを明示的に定義してやることでこれらのクエリは走らないようにすることもできます。
+
 データの検索
 ------------
 
@@ -123,9 +138,13 @@ Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコ
 
 .. literalinclude:: ./004-search-user.pl
 
+$iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び出すたびに、Rowオブジェクトを生成してくれます。
+
 データの削除
 ------------
 
 データの変更
 ------------
+
+
 

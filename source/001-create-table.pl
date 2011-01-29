@@ -24,7 +24,7 @@ my $teng = Teng->new(
 
 $teng->do(q{
     CREATE TABLE user (
-        id INT UNSIGNED NOT NULL,
+        id INT UNSIGNED NOT NULL PRIMARY KEY,
         name VARCHAR NOT NULL,
         age INT UNSIGNED NOT NULL
     )
