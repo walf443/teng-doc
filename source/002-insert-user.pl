@@ -3,6 +3,7 @@ use warnings;
 use DBI;
 use Teng;
 use Teng::Schema::Loader;
+use Data::Dumper;
 
 my $dbh = DBI->connect('dbi:SQLite:quickstart.sqlite', '', '', {
     RaiseError => 1,
@@ -20,11 +21,11 @@ my $teng = Teng->new(
     schema => $schema,
 );
 
-$teng->do(q{
-    CREATE TABLE user (
-        id INT UNSIGNED NOT NULL,
-        name VARCHAR NOT NULL,
-        age INT UNSIGNED NOT NULL
-    )
+my $row = $teng->insert(user => {
+    id => 1,
+    name => 'walf443',
+    age  => 26,
 });
+
+warn Dumper($row);
 
