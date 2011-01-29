@@ -3,13 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Teng-Doc's documentation!
+TengによるRDBMSを扱う開発
 ====================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
+
+   about
+   quickstart
 
 Indices and tables
 ==================
