@@ -3,17 +3,26 @@
 
 一般編
 -------
-* ページングをしたい
-* 複数のデータを一気にinsertしたい
-* 実行しているクエリを確認したい
+
+.. toctree::
+  :maxdepth: 2
+
+  cookbook/paging
+  cookbook/bulk_insert
+  cookbook/check_query
+
 * トランザクションしたい
 * Master/Slave分散がしたい
 * Shardingがしたい
 
 Rowオブジェクト編
 -----------------
+.. toctree::
+  :maxdepth: 2
+
+  cookbook/flagged_utf8
+
 * メソッドを追加したい
-* データをflagged utf8で扱いたい
 * キャッシュからRowオブジェクトを復元したい
 * updateやdelete時にあわせて処理を実行させたい
 * Teng::Rowのメソッド名とカラム名が被ってしまった
