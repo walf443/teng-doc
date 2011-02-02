@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>データをflagged utf8で扱いたい &mdash; Teng-Doc v0.01 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Teng-Doc v0.01 documentation" href="../index.html" />
+    <link rel="up" title="逆引きレシピ" href="../cookbook.html" />
+    <link rel="prev" title="実行しているクエリを確認したい" href="check_query.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="check_query.html" title="実行しているクエリを確認したい"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Teng-Doc v0.01 documentation</a> &raquo;</li>
+          <li><a href="../cookbook.html" accesskey="U">逆引きレシピ</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="flagged-utf8">
+<h1>データをflagged utf8で扱いたい<a class="headerlink" href="#flagged-utf8" title="Permalink to this headline">¶</a></h1>
+<p>基本的にはDB側のデータはUTF8で保存しておくのが無難です。</p>
+<div class="section" id="mysql">
+<h2>MySQLの場合<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h2>
+<p>mysql_enable_utf8オプションを使いましょう</p>
+<p>SEE ALSO: <a class="reference external" href="http://search.cpan.org/search?query=DBD%3A%3Amysql&amp;mode=module">http://search.cpan.org/search?query=DBD%3A%3Amysql&amp;mode=module</a></p>
+</div>
+<div class="section" id="sqlite">
+<h2>SQLiteの場合<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h2>
+<p>sqlite_unicodeアトリビュートを有効にしましょう。</p>
+<p>SEE ALSO: <a class="reference external" href="http://search.cpan.org/search?query=DBD%3A%3ASQLite&amp;mode=module">http://search.cpan.org/search?query=DBD%3A%3ASQLite&amp;mode=module</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">データをflagged utf8で扱いたい</a><ul>
+<li><a class="reference internal" href="#mysql">MySQLの場合</a></li>
+<li><a class="reference internal" href="#sqlite">SQLiteの場合</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="check_query.html"
+                        title="previous chapter">実行しているクエリを確認したい</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/cookbook/flagged_utf8.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="check_query.html" title="実行しているクエリを確認したい"
+             >previous</a> |</li>
+        <li><a href="../index.html">Teng-Doc v0.01 documentation</a> &raquo;</li>
+          <li><a href="../cookbook.html" >逆引きレシピ</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Keiji Yoshimi.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>
