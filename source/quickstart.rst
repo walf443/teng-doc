@@ -43,6 +43,7 @@ nameというカラムとageというカラムを持つuserテーブルを作り
 以下のようなプログラムを作ります。
 
 .. literalinclude:: ./quickstart/create-table.pl
+    :language: perl
 
 Teng::Schema::Loaderは、dbhから現在のテーブル情報を動的に取得して、Teng用のSchemaを構築してくれるモジュールです。
 
@@ -93,14 +94,17 @@ userテーブルができていますね。
 適当なデータを挿入してみましょう。
 
 .. literalinclude:: ./quickstart/insert-user.pl
+    :language: perl
 
 ところで、このコードはTengクラスのインスタンスを作るところまでは、前回のコードと同様で冗長ですね。ここまでのコードはこれからも何度か出てきますし、説明上も見辛いので、インスタンスを作る部分までの部分は別ファイルへ外出ししてしまいましょう。
 
 .. literalinclude:: ./quickstart/create-teng-instance.pl
+    :language: perl
 
 これを、create-teng-instance.plとして保存し、先ほどのコードを下記のように変更します。
 
 .. literalinclude:: ./quickstart/insert-user-fix.pl
+    :language: perl
 
 Tengのインスタンスを作るところまでは、今後はこのように記述します。
 
@@ -140,6 +144,7 @@ Schemaを明示的に定義してやることでこれらのクエリは走ら�
 せっかくなので先程の確認の操作をTengからもやってみましょう。
 
 .. literalinclude:: ./quickstart/search_named-user.pl
+    :language: perl
 
 Teng#search_named($sql, $hashref, $table_name)は、$sqlをSQLとして実行し、Teng::Iteratorオブジェクトを返します。
 
@@ -153,10 +158,12 @@ $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び
 また、簡単な条件での検索であればTeng#searchメソッドを使うと生でSQLを記述しなくてもよいです。
 
 .. literalinclude:: ./quickstart/search-user.pl
+    :language: perl
 
 一件のみ取得する際にはTeng#singleを使うと直接Rowオブジェクトを取得できます。
 
 .. literalinclude:: ./quickstart/single-user.pl
+    :language: perl
 
 データの削除
 ------------
@@ -164,10 +171,12 @@ $iterは、Teng::Iteratorオブジェクトです。Teng::Iterator#nextを呼び
 データを削除する際にはTeng#delete、あるいは、Teng::Row#deleteが使えます。
 
 .. literalinclude:: ./quickstart/delete-user.pl
+    :language: perl
 
 戻り値は、削除された件数です。Teng#deleteは複数件を一気に消すときに便利でしょう。
 
 .. literalinclude:: ./quickstart/delete-user-row.pl
+    :language: perl
 
 Rowオブジェクトのdeleteに何かしらのhookを入れているとき(キャッシュの削除等)に使います。
 各レコードの削除ごとに1回SQL発行されるので、ケースによってはやや注意して使う必要があるかもしれません。
@@ -178,6 +187,7 @@ Rowオブジェクトのdeleteに何かしらのhookを入れているとき(キ
 データのupdateもdeleteとほぼ同じです。
 
 .. literalinclude:: ./quickstart/update-user-row.pl
+    :language: perl
 
 Rowオブジェクトからupdateした場合、条件が単純であれば元のRowオブジェクトのデータもupdateされていますが、DBに保存されている値と一致していることは保証されないので、取得しなおすのが無難です。
 
