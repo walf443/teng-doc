@@ -14,6 +14,7 @@ Contents:
    about
    feature
    quickstart
+   cookbook
 
 Indices and tables
 ==================
