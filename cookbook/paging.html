@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ページングしたい &mdash; Teng-Doc v0.01 documentation</title>
+    <title>ページングしたい &mdash; Teng-Doc 0.01 documentation</title>
+    
     <link rel="stylesheet" href="../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -23,10 +26,10 @@
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="Teng-Doc v0.01 documentation" href="../index.html" />
+    <link rel="top" title="Teng-Doc 0.01 documentation" href="../index.html" />
     <link rel="up" title="逆引きレシピ" href="../cookbook.html" />
     <link rel="next" title="複数のデータを一気にinsertしたい" href="bulk_insert.html" />
-    <link rel="prev" title="逆引きレシピ" href="../cookbook.html" /> 
+    <link rel="prev" title="はじめに" href="about.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,9 +42,9 @@
           <a href="bulk_insert.html" title="複数のデータを一気にinsertしたい"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../cookbook.html" title="逆引きレシピ"
+          <a href="about.html" title="はじめに"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Teng-Doc v0.01 documentation</a> &raquo;</li>
+        <li><a href="../index.html">Teng-Doc 0.01 documentation</a> &raquo;</li>
           <li><a href="../cookbook.html" accesskey="U">逆引きレシピ</a> &raquo;</li> 
       </ul>
     </div>  
@@ -53,10 +56,24 @@
             
   <div class="section" id="id1">
 <h1>ページングしたい<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>searchメソッドを使いつつページングしたい</li>
-</ul>
-<p><a class="reference external" href="http://search.cpan.org/search?query=Teng%3A%3APlugin%3A%3APager&amp;mode=all">Teng::Plugin::Pager</a> を使います</p>
+<div class="section" id="search">
+<h2>searchメソッドを使いつつページングしたい<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<p>Teng::Plugin::Pager および、Teng::Plugin::Pager::MySQLFoundRows を使う方法があります。</p>
+<div class="section" id="id2">
+<h3><a class="reference external" href="http://search.cpan.org/search?query=Teng%3A%3APlugin%3A%3APager&amp;mode=all">Teng::Plugin::Pager</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>指定したrowsより一件多く取得し、それを元に次のページがあるかどうか、を判断します。</p>
+<p>どのRDBMSでも使えて、そこまでパフォーマンスに致命的な影響を与えることがない、というのがメリットですが、ページャーは全体の件数を知ることはできないので、ページングの表示のさせ方は制限されます。</p>
+</div>
+<div class="section" id="id3">
+<h3><a class="reference external" href="http://search.cpan.org/search?query=Teng%3A%3APlugin%3A%3APager%3A%3AMySQLFoundRows&amp;mode=all">Teng::Plugin::Pager::MySQLFoundRows</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>名前の通りMySQLでしか使えません。SQL_CALC_FOUND_ROWSヒントをつけてクエリを実行後、FOUND_ROWS()を呼びだすことで全体の件数を取得します。</p>
+<p>場合によっては、クエリのパフォーマンスに大きく影響がでてくる場合があります。</p>
+</div>
+</div>
+<div class="section" id="search-by-sql">
+<h2>search_by_sqlを書きつつページングしたい<a class="headerlink" href="#search-by-sql" title="Permalink to this headline">¶</a></h2>
+<p>Teng::Plugin::SearchBySQLWithPagerが使えます。</p>
+</div>
 </div>
 
 
@@ -65,9 +82,22 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ページングしたい</a><ul>
+<li><a class="reference internal" href="#search">searchメソッドを使いつつページングしたい</a><ul>
+<li><a class="reference internal" href="#id2">Teng::Plugin::Pager</a></li>
+<li><a class="reference internal" href="#id3">Teng::Plugin::Pager::MySQLFoundRows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#search-by-sql">search_by_sqlを書きつつページングしたい</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../cookbook.html"
-                        title="previous chapter">逆引きレシピ</a></p>
+  <p class="topless"><a href="about.html"
+                        title="previous chapter">はじめに</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="bulk_insert.html"
                         title="next chapter">複数のデータを一気にinsertしたい</a></p>
@@ -79,7 +109,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -103,15 +133,15 @@
           <a href="bulk_insert.html" title="複数のデータを一気にinsertしたい"
              >next</a> |</li>
         <li class="right" >
-          <a href="../cookbook.html" title="逆引きレシピ"
+          <a href="about.html" title="はじめに"
              >previous</a> |</li>
-        <li><a href="../index.html">Teng-Doc v0.01 documentation</a> &raquo;</li>
+        <li><a href="../index.html">Teng-Doc 0.01 documentation</a> &raquo;</li>
           <li><a href="../cookbook.html" >逆引きレシピ</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011, Keiji Yoshimi.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
 </html>

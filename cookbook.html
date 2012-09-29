@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>逆引きレシピ &mdash; Teng-Doc v0.01 documentation</title>
+    <title>逆引きレシピ &mdash; Teng-Doc 0.01 documentation</title>
+    
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -23,8 +26,8 @@
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
-    <link rel="top" title="Teng-Doc v0.01 documentation" href="index.html" />
-    <link rel="next" title="ページングしたい" href="cookbook/paging.html" />
+    <link rel="top" title="Teng-Doc 0.01 documentation" href="index.html" />
+    <link rel="next" title="はじめに" href="cookbook/about.html" />
     <link rel="prev" title="クイックスタート" href="quickstart.html" /> 
   </head>
   <body>
@@ -35,12 +38,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="cookbook/paging.html" title="ページングしたい"
+          <a href="cookbook/about.html" title="はじめに"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="quickstart.html" title="クイックスタート"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Teng-Doc v0.01 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Teng-Doc 0.01 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,10 +55,23 @@
   <div class="section" id="id1">
 <h1>逆引きレシピ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>一般編<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>逆引きレシピについて<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cookbook/paging.html">ページングしたい</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook/about.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook/about.html#id2">実行例について</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>一般編<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cookbook/paging.html">ページングしたい</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cookbook/paging.html#search">searchメソッドを使いつつページングしたい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook/paging.html#search-by-sql">search_by_sqlを書きつつページングしたい</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cookbook/bulk_insert.html">複数のデータを一気にinsertしたい</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cookbook/check_query.html">実行しているクエリを確認したい</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cookbook/check_query.html#id2">DBIx::QueryLog を使う方法</a></li>
@@ -69,6 +85,7 @@
 <li>トランザクションしたい</li>
 <li>Master/Slave分散がしたい</li>
 <li>Shardingがしたい</li>
+<li>Pluginのexportするメソッド名を別名にしたい</li>
 </ul>
 </div>
 <div class="section" id="row">
@@ -84,6 +101,7 @@
 </div>
 <ul class="simple">
 <li>メソッドを追加したい</li>
+<li>特定のカラム名を呼びだした場合に、特定のオブジェクトとして呼びだせるようにしたい</li>
 <li>キャッシュからRowオブジェクトを復元したい</li>
 <li>updateやdelete時にあわせて処理を実行させたい</li>
 <li>Teng::Rowのメソッド名とカラム名が被ってしまった</li>
@@ -91,11 +109,15 @@
 </div>
 <div class="section" id="sql">
 <h2>SQL編<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cookbook/dynamic_query.html">動的に条件の変動するクエリを書きたい</a></li>
+</ul>
+</div>
 <ul class="simple">
 <li>INNER JOINしたい</li>
 <li>LEFT JOINしたい</li>
 <li>同じカラムに対する条件を指定したい</li>
-<li>動的に条件の変動するクエリを書きたい</li>
 </ul>
 </div>
 </div>
@@ -109,13 +131,18 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">逆引きレシピ</a><ul>
-<li><a class="reference internal" href="#id2">一般編</a><ul>
+<li><a class="reference internal" href="#id2">逆引きレシピについて</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">一般編</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#row">Rowオブジェクト編</a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#sql">SQL編</a></li>
+<li><a class="reference internal" href="#sql">SQL編</a><ul>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -124,8 +151,8 @@
   <p class="topless"><a href="quickstart.html"
                         title="previous chapter">クイックスタート</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="cookbook/paging.html"
-                        title="next chapter">ページングしたい</a></p>
+  <p class="topless"><a href="cookbook/about.html"
+                        title="next chapter">はじめに</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="sources/cookbook.txt"
@@ -134,7 +161,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -155,17 +182,17 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="cookbook/paging.html" title="ページングしたい"
+          <a href="cookbook/about.html" title="はじめに"
              >next</a> |</li>
         <li class="right" >
           <a href="quickstart.html" title="クイックスタート"
              >previous</a> |</li>
-        <li><a href="index.html">Teng-Doc v0.01 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Teng-Doc 0.01 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011, Keiji Yoshimi.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
 </html>
