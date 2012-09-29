@@ -110,7 +110,7 @@ Teng#insert($table, $hashref)は$hashrefの内容を$tableテーブルへ1レコ
 
 実際にデータが挿入されたのか確認してみましょう。 ::
 
-    $ sqlite3
+    $ sqlite3 quickstart.sqlite3
     sqlite> SELECT * FROM user;
     1|walf443|26
     2|walf444|30
