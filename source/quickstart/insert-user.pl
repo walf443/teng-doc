@@ -13,14 +13,9 @@ my $dbh = DBI->connect('dbi:SQLite:quickstart.sqlite', '', '', {
     sqlite_unicode => 1,
 });
 
-my $schema = Teng::Schema::Loader->load(
+my $teng = Teng::Schema::Loader->load(
     dbh => $dbh,
     namespace => 'MyApp::DB',
-);
-
-my $teng = Teng->new(
-    dbh => $dbh,
-    schema => $schema,
 );
 
 my $row = $teng->insert(user => {
